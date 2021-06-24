@@ -4,8 +4,12 @@ const {
   token
 } = require('./config.json');
 var args = process.argv.slice(2);
+
+
+
 if (args.length <= 0) {
     console.log("U need some args dude");
+    usage();
     process.exit();
 }
 
@@ -27,6 +31,7 @@ client.once('ready', () => {
           break;
       default:
           console.log("Command not accepted");
+          usage();
           process.exit();
   };
 });
@@ -62,4 +67,8 @@ function sendWarning(msg) {
     return;
 }
 
+function usage() {
+    console.log("Usage:");
+    console.log("nodejs manage.js {manteniment | up | proves}");
+}
 client.login(token);
