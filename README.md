@@ -1,5 +1,5 @@
-*** MogusBot admin interface***
+***MogusBot admin interface***
 
-***`install: `npm install`***
+***install: `npm install`***
 
 ***Run: `nodejs manage.js`***
