@@ -23,15 +23,20 @@ client.once('ready', () => {
   switch(args[0]){
       case "manteniment":
           sendWarning(warnMsg);
+          client.destroy();
+          process.exit();
           break;
       case "up":
           sendWarning(readyMsg);
+          client.destroy();
+          process.exit();
           break;
       case "proves":
           break;
       default:
           console.log("Command not accepted");
           usage();
+          client.destroy();
           process.exit();
   };
 });
