@@ -20,25 +20,25 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
   console.log('A punt!');
+  let proves = false;
   switch(args[0]){
       case "manteniment":
           sendWarning(warnMsg);
-          client.destroy();
-          process.exit();
           break;
       case "up":
           sendWarning(readyMsg);
-          client.destroy();
-          process.exit();
           break;
       case "proves":
+          proves = true;
           break;
       default:
           console.log("Command not accepted");
           usage();
-          client.destroy();
-          process.exit();
   };
+  if (!proves) {
+      client.destroy();
+      process.exit();
+  }
 });
 client.once('reconnecting', () => {
   console.log('Reconnectant!');
